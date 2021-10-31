@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black-Scholes JS</title>
+    <meta name="description"
+        content="A light weight javascript library for calculating fair options prices and the greeks.">
+    <meta property="og:title" content="Black-Scholes JS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://black-scholes-js.netlify.app" />
+    <meta property="og:image" content="https://thumbs.gfycat.com/GleamingSpiffyFoal-size_restricted.gif" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+    <div class="container mt-5 text-center">
+        <h1> 
+            Financial Economics 1
+            </h1>
+        
+        <h2 style="text-align:left;">Option Pricing</h2>
+        <h2 style="text-align:left;" > Method: Black Scholes Merton Mode</h2>
+        <h3 style="text-align:left;"> Sem-V</h3>
+       
+    </div>
+    <div class="container mt-5 text-center">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <button type="button" class="btn btn-primary active" onclick="window.location = './index.html'">Docs</button>
+            <button type="button" class="btn btn-primary"
+                onclick="window.location = './calculator.html'" >Calculator</button>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2 class="text-center">Documentation</h2>
+        <div id="documentation">
+            <h3 class="text-center">Set Up</h3>
+            <p>Before even starting to calculate a fair option price, we need to set up the needed variables.
+                Our variables are held in an instance of <code>BSHolder</code>:</p>
+            <ul>
+                <li><code>stock</code>: underlying's asset price</li>
+                <li><code>strike</code>: strike price</li>
+                <li><code>interest</code>: the annualized risk-free interest rate (e.g. 0.05 corresponds 5%)</li>
+                <li><code>vola</code>: volatility (e.g. 0.3 corresponds 30%)</li>
+                <li><code>term</code>: a time in years (e.g. 0.5 corresponds half-year)</li>
+            </ul>
+            
+
+            <h3 class="text-center">Calculation</h3>
+            <p>All functions regarding calculations are members in <code>BS</code>.
+                Pass an instance of <code>BSHolder</code> to a function from <code>BS</code>.
+                E.g.: calculating put price:</p>
+            <div class="code-container">
+                <input type="text" class="form-control snippet" value='var put = BS.put(bsholder);' id="example-snippet"
+                    readonly>
+                <button class="btn btn-secondary mx-2" onclick="copyCode('example-snippet')">copy</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+    </div>
+
+
+    <script>
+        function copyCode(elementId) {
+            /* Get the text field */
+            var copyText = document.getElementById(elementId);
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+
+</html>
